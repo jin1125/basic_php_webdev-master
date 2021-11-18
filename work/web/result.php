@@ -6,10 +6,9 @@ include('../app/_parts/_header.php');
 
 ?>
 
-<form action="result.php" method='get'>
-  <input type="text" name='message'>
-  <button>Send</button>
-</form>
+<p><?= h($message);?></p>
+
+<p><a href="index.php">Go back</a></p>
 
 <?php
 include('../app/_parts/_footer.php');
