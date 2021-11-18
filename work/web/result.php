@@ -2,15 +2,13 @@
 
 require('../app/functions.php');
 
-$colors = filter_input(INPUT_GET,'colors',FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
-
-$colors = empty($colors) ? 'no selected' : implode(',',$colors) ;
+$color = filter_input(INPUT_GET,'color') ?? 'no selected';
 
 include('../app/_parts/_header.php');
 
 ?>
 
-<p><?= h($colors); ?></p>
+<p><?= h($color); ?></p>
 
 <p><a href="index.php">Go back</a></p>
 
