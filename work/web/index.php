@@ -1,3 +1,8 @@
+<?php
+
+$name = 'Taro <script>alert(1);</script>';
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,6 +10,6 @@
   <title>PHP Practice</title>
 </head>
 <body>
-  <p>Hello, PHP!</p>
+  <p>Hello, <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>!</p>
 </body>
 </html>
