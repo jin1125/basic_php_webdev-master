@@ -2,7 +2,7 @@
 
 require('../app/functions.php');
 
-$color = filter_input(INPUT_GET,'color') ?? 'no selected';
+$color = filter_input(INPUT_GET,'color') ?? 'transparent';
 
 include('../app/_parts/_header.php');
 
