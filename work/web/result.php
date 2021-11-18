@@ -2,13 +2,19 @@
 
 require('../app/functions.php');
 
-$message = trim(filter_input(INPUT_POST, 'message'));
-$message = $message !== '' ? $message :'...';
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-$filename = '../app/messages.txt';
-$fp = fopen($filename,'a');
-fwrite($fp,$message."\n");
-fclose($fp);
+  $message = trim(filter_input(INPUT_POST, 'message'));
+  $message = $message !== '' ? $message :'...';
+  
+  $filename = '../app/messages.txt';
+  $fp = fopen($filename,'a');
+  fwrite($fp,$message."\n");
+  fclose($fp);
+}else{
+  exit('Invalid request');
+}
+
 
 include('../app/_parts/_header.php');
 
